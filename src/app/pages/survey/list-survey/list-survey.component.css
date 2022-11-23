@@ -1,0 +1,19 @@
+button{
+    font-family:sans-serif;
+    color: #F7EEEA;
+    float:inline-end;
+    border-radius: 5px;
+}
+button a{
+    text-decoration: none;
+    color: #F7EEEA;
+}
+.delete {
+    background: red;
+}
+.edit{
+    background: blue;
+}
+.respond{
+    background: rgb(42, 42, 44);
+}

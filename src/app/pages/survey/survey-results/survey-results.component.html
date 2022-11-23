@@ -1,0 +1,52 @@
+<h1>Survey Results</h1>
+<div class="card" style="width: 18rem;" *ngFor="let survey of surveyList">
+    <div *ngIf="survey.totalResponses > 0">
+        <div class="card-header">
+        {{survey.surveyName}} - Total Responses: {{survey.totalResponses}}
+        </div>
+        <ul class="list-group list-group-flush" *ngFor="let question of survey.questions">
+            <li class="list-group-item">{{question.description}}</li>
+            <div *ngIf="question.questionType === 'multipleChoice'; else trueFalse">
+                <li class="list-group-item">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" [ngStyle]="{'width.%': question.responseA}" aria-valuemin="0" aria-valuemax="100">{{question.optionA}}</div>
+                    </div>
+                    {{question.optionA}} - {{question.responseA}}%
+                </li>
+                <li class="list-group-item">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" [ngStyle]="{'width.%': question.responseB}" aria-valuemin="0" aria-valuemax="100">{{question.optionB}}</div>
+                    </div>
+                    {{question.optionB}} - {{question.responseB}}%
+                </li>
+                <li class="list-group-item">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" [ngStyle]="{'width.%': question.responseC}" aria-valuemin="0" aria-valuemax="100">{{question.optionC}}</div>
+                    </div>
+                    {{question.optionC}} - {{question.responseC}}%
+                </li>
+                <li class="list-group-item">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" [ngStyle]="{'width.%': question.responseD}" aria-valuemin="0" aria-valuemax="100">{{question.optionD}}</div>
+                    </div>
+                    {{question.optionD}} - {{question.responseD}}%
+                </li>
+            </div>
+            <ng-template #trueFalse>
+                <li class="list-group-item">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" [ngStyle]="{'width.%': question.responseTrue}" aria-valuemin="0" aria-valuemax="100">True</div>
+                    </div>
+                    True - {{question.responseTrue}}%
+                </li>
+                <li class="list-group-item">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" [ngStyle]="{'width.%': question.responseFalse}" aria-valuemin="0" aria-valuemax="100">False</div>
+                    </div>
+                    False - {{question.responseFalse}}%
+                </li>
+            </ng-template>
+            
+        </ul>
+    </div>
+</div>
