@@ -20,14 +20,14 @@ export class CrudHttpService {
     // let response = this.http.post<JSON>(API_URL, {name:email, password:pass} );
     console.log("I'm here 1");
 
-    return this.http.post(API_URL, {name:email, password:pass} ).pipe(map(
-      response => {
+    return this.http.post<any>(API_URL, {name:email, password:pass} ).pipe(
+      map(response => {
         console.log("I'm here 2");
         
-        // this.auth_token = response.success ? response.token : null;
-        // return response.success;
-        return Observable.create(false);
-    }));
+        this.auth_token = response.success ? response.token : null;
+        return response.success;
+      }
+    ));
     
 
     //This is for test
