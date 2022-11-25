@@ -37,14 +37,14 @@
         <div class="row justify-content-md-center" id="login-form">
             <div class="col"></div>
             <div class="col col-md-4 d-flex align-items-center">               
-                        <form >
-       
+                        <form novalidate #form="ngForm" (ngSubmit)="formLogin(form)">
+                            
                           <div class="form-group">
                             <label for="email"></label>
-                            <input class="form-control" type="email" placeholder="E-mail"/>
+                            <input class="form-control" name="email" type="email" placeholder="E-mail" [(ngModel)]="email" required/>
                             <label for="password"></label>
-                            <input class="form-control" type="password" placeholder="Password"/>
-                            <button class="form-control btn-login">Login</button>
+                            <input class="form-control" name="password" type="password" placeholder="Password" [(ngModel)]="password" required />
+                            <button class="form-control btn-login" type="submit">Login</button>
                             <h6 class="fp">Forgote your password?</h6><a href="" class="reset">Reset Password</a>
                           </div>
                         </form>

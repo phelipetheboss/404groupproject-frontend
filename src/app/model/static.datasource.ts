@@ -14,8 +14,10 @@ export class StaticDatasource {
     new User(7, 'tim_burton', 'myemail7@email.ca', 'Tim Burton'),
     new User(8, 'jim_henson', 'myemail8@email.ca', 'Jim Henson'),
   ];
+  auth_token: string = "";
 
   getUsers(): Observable<User[]> {
     return from([this.users]);
   }
+
 }
