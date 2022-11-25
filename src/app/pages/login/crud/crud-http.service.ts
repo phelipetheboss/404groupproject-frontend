@@ -30,7 +30,7 @@ export class CrudHttpService {
     ));
     
 
-    //This is for test
+    // // This is for test
     // this.auth_token = "Token test frontend";
     // console.log("token=" + this.auth_token);
     // return Observable.create(false);
