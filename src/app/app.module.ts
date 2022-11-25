@@ -8,7 +8,7 @@ import { FooterComponent } from './partials/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BasePageComponent } from './partials/base-page/base-page.component';
-import { LoginComponent } from './pages/login/login.component';
+//import { LoginComponent } from './pages/login/login.component';
 import { LoginService } from './pages/login/login.service';
 import { ListSurveyComponent } from './pages/survey/list-survey/list-survey.component';
 import { CreateSurveyComponent } from './pages/survey/create-survey/create-survey.component';
@@ -19,6 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RespondSurveyComponent } from './pages/survey/respond-survey/respond-survey.component';
 import { FormsModule } from '@angular/forms';
 import { SurveyResultsComponent } from './pages/survey/survey-results/survey-results.component';
+import { AuthComponent } from './admin/auth/auth.component';
+import { RegisterComponent } from './admin/register/register.component';
+import { LoginComponent } from './admin/login/login.component';
 
 
 @NgModule({
@@ -35,7 +38,9 @@ import { SurveyResultsComponent } from './pages/survey/survey-results/survey-res
     CreateSurveyComponent,
     UpdateSurveyComponent,
     RespondSurveyComponent,
-    SurveyResultsComponent
+    SurveyResultsComponent,
+    AuthComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
