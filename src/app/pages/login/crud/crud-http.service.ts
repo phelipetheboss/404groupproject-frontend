@@ -9,22 +9,31 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CrudHttpService {
-  apiUrlPostLogin: string = 'http://localhost:3000/api/post/login';
+  apiUrlPostLogin: string = 'http://localhost:3000/api/login';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   auth_token: string = "";
   constructor(private http: HttpClient) { }
 
   authenticate(email: string, pass: string): Observable<boolean> {
     let API_URL = `${this.apiUrlPostLogin}`;
-    return this.http.post<any>(API_URL, {name:email, password:pass} ).pipe(map(
+    
+    // let response = this.http.post<JSON>(API_URL, {name:email, password:pass} );
+    console.log("I'm here 1");
+
+    return this.http.post(API_URL, {name:email, password:pass} ).pipe(map(
       response => {
-        this.auth_token = response.success ? response.token : null;
-        return response.success;
+        console.log("I'm here 2");
+        
+        // this.auth_token = response.success ? response.token : null;
+        // return response.success;
+        return Observable.create(false);
     }));
     
-    // this.auth_token = "this is a test token";
+
+    //This is for test
+    // this.auth_token = "Token test frontend";
     // console.log("token=" + this.auth_token);
-    // return Observable.create(true);
+    // return Observable.create(false);
 
   }
 
