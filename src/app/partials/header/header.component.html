@@ -22,21 +22,25 @@
           <a class="nav-link" href="/survey-list">Surveys</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
-        </li>
+        <div *ngIf="!authService.isAuthenticated(); else elseBlock">
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+        </div>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/create-survey">Create Survey</a>
-        </li>
+        <ng-template #elseBlock>
+          <li class="nav-item">
+            <a class="nav-link" href="/create-survey">Create Survey</a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/survey-results">Survey Results </a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/survey-results">Survey Results</a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="" (click)="logout()">Logout</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="" (click)="logout()">Logout</a>
+          </li>
+        </ng-template>
 
       </div>
     </div>
