@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
 })
 export class CreateSurveyComponent{
   public currentDate = new Date().toISOString().split('T')[0];
-  
+
   survey = this.fb.group({
     surveyName: '',
     lastModification: this.currentDate,
@@ -45,5 +45,5 @@ export class CreateSurveyComponent{
   createSurvey(survey: any){
     this.crudHttpService.createSurvey(survey).subscribe();
     this.router.navigate(['/home']);
-}
+  }
 }

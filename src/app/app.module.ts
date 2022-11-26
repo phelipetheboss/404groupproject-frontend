@@ -9,7 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BasePageComponent } from './partials/base-page/base-page.component';
 //import { LoginComponent } from './pages/login/login.component';
-import { LoginService } from './pages/login/login.service';
+// import { LoginService } from './pages/login/login.service';
 import { ListSurveyComponent } from './pages/survey/list-survey/list-survey.component';
 import { CreateSurveyComponent } from './pages/survey/create-survey/create-survey.component';
 import { UpdateSurveyComponent } from './pages/survey/update-survey/update-survey.component';
@@ -49,7 +49,7 @@ import { LoginComponent } from './admin/login/login.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [LoginService],
+  // providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
