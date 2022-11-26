@@ -9,8 +9,9 @@
       <td class="list-group-item">
         {{ survey.surveyName }}
         <button type="button" class="respond" *ngIf="isAvailable(survey)"><a href="#" [routerLink]="['/respond-survey/', survey._id]">Respond</a></button>
-        <button type="button" class="delete" (click)="deleteSurvey(survey._id)">Delete</button>
-        <button type="button" class="edit" ><a href="#" [routerLink]="['/update-survey/', survey._id]">Edit</a></button>
+
+        <button type="button" *ngIf="authService.isAuthenticated()" class="delete" (click)="deleteSurvey(survey._id)">Delete</button>
+        <button type="button" *ngIf="authService.isAuthenticated()" class="edit" ><a href="#" [routerLink]="['/update-survey/', survey._id]">Edit</a></button>
       </td>
     </tr>
   </ul>

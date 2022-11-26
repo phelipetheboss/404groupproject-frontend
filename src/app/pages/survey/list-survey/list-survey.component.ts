@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudHttpService } from '../crud/crud-http.service';
+import { AuthService } from "../../../admin/auth/auth.service";
 
 @Component({
   selector: 'app-list-survey',
@@ -9,7 +10,7 @@ import { CrudHttpService } from '../crud/crud-http.service';
 export class ListSurveyComponent implements OnInit {
   surveyList:any = [];
 
-  constructor( private crudHttpService: CrudHttpService) { }
+  constructor(public authService: AuthService, private crudHttpService: CrudHttpService) { }
 
   ngOnInit(): void {
     this.listSurveys();
@@ -32,12 +33,12 @@ export class ListSurveyComponent implements OnInit {
   isAvailable(survey: any): Boolean{
     let result: Boolean;
     let currentDate = new Date(Date.now()).toISOString().split('T')[0];
-    
+
     if(survey.startDate <= currentDate && survey.endDate >= currentDate)
       result = true;
-    else 
+    else
       result = false;
-    
-    return result;   
+
+    return result;
   }
 }
