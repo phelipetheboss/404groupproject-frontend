@@ -43,7 +43,52 @@ export class CreateSurveyComponent{
   }
 
   createSurvey(survey: any){
-    this.crudHttpService.createSurvey(survey).subscribe();
-    this.router.navigate(['/home']);
+    let errorMessage = "";
+    let errorCount = 0;
+
+    if(survey.surveyName === ""){
+      errorMessage += "Survey Name is blank!\n";
+      errorCount++;
+    }
+    if(survey.startDate === ""){
+      errorMessage += "Start Date is blank!\n";
+      errorCount++;
+    }
+    if(survey.endDate === ""){
+      errorMessage += "End Date is blank!\n";
+      errorCount++;
+    }
+    if(survey.questions.length === 0){
+      errorMessage += "You should insert at least a question!\n";
+      errorCount++;
+    }
+    for(let i = 0; i < survey.questions.length; i++){
+      if(survey.questions[i].description === ""){
+        errorMessage += "You should insert a description for question "+(i+1)+"!\n";
+        errorCount++;
+      }
+      if(survey.questions[i].questionType === ""){
+        errorMessage += "You should insert a type for question "+(i+1)+"!\n";
+        errorCount++;
+      }
+      if(survey.questions[i].questionType === "multipleChoice"
+         && (survey.questions[i].optionA === ""
+             || survey.questions[i].optionB === ""
+             || survey.questions[i].optionC === ""
+             || survey.questions[i].optionD === ""
+            )
+      ){
+        errorMessage += "You should insert a description for all options of question "+(i+1)+"!\n";
+        errorCount++;
+      }
+    }
+
+    if(errorCount > 0){
+      window.alert(errorMessage);
+    }
+    else{
+      this.crudHttpService.createSurvey(survey).subscribe();
+      this.router.navigate(['/home']);
+    }
   }
 }
