@@ -32,7 +32,7 @@ export class ListSurveyComponent implements OnInit {
 
   isAvailable(survey: any): Boolean{
     let result: Boolean;
-    let currentDate = new Date(Date.now()).toISOString().split('T')[0];
+    let currentDate = new Date().toLocaleDateString('en-CA');
 
     if(survey.startDate <= currentDate && survey.endDate >= currentDate)
       result = true;
