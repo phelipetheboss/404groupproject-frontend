@@ -7,3 +7,80 @@ ul {
 .testClass {
   margin-bottom: 225px;
 }
+
+#survey{
+  margin-left: 550px;
+  margin-top:70px;
+}
+
+.border{
+  position: absolute;
+  display: block;
+  width: 737px ;
+  height: auto;
+  margin-left:160px;
+  top: 60px;
+
+  background: #F5BDA6;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 22px;
+  }
+
+
+
+#survey-list{
+  position: relative;
+width: 937px;
+height: auto;
+margin-top: 550px;
+
+background: #F5BDA6;
+box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+border-radius: 22px;
+}
+
+
+.form-control:focus {
+  box-shadow: none;
+}
+.form-group {
+    position: absolute;
+    left: 380px;
+    top: 200px;
+
+}
+
+.form-group > input {
+  width: 330%;
+
+
+}
+
+/*------------------------------
+	Form
+------------------------------*/
+.form-control {
+  position: relative;
+width: 886px ;
+height: 38px ;
+left: 30px;
+top: 15px;
+margin-bottom: 20px;
+color: #FFFFFF;
+box-shadow: 0px 1px 4px rgba(241, 238, 238, 0.25);
+
+}
+.form-control,
+.form-control:focus,
+.form-control:focus:hover {
+  color: black;
+  background: white;
+  outline: none;
+}
+.form-control:focus,
+.form-control:focus:hover {
+  border-bottom: 1px solid #ff8d00;
+  border-top: 1px solid #ff8d00;
+  border-left: 1px solid #ff8d00;
+  border-right: 1px solid #ff8d00;
+}

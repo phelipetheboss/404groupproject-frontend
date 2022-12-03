@@ -26,7 +26,7 @@ img{
   width: 259px;
   height: 44px;
   left: 486px;
-  top: 400px;
+  top: 600px;
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 900;
@@ -42,7 +42,7 @@ img{
   width: 69px;
   height: 38px;
   left: 580px;
-  top: 456px;
+  top: 650px;
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 500;
@@ -120,43 +120,42 @@ img{
 }
 
 
-/*.fp{*/
-/*  position: absolute;*/
-/*  width: 218px;*/
-/*  height: 24px;*/
-/*  left: 150px;*/
-/*  top: 250px;*/
+.fp{
+ position: absolute;
+ width: 218px;
+ height: 24px;
+left: 150px;
+ top: 250px;
 
-/*  font-family: 'Poppins';*/
-/*  font-style: normal;*/
-/*  font-weight: 500;*/
-/*  font-size: 16px;*/
-/*  line-height: 24px;*/
-/*  !* identical to box height *!*/
-
-/*  text-align: center;*/
-
-/*  color: #616161;*/
-/*}*/
-
-/*.reset{*/
-/*  position: absolute;*/
-/*  width: 218px;*/
-/*  height: 24px;*/
-/*  left: 300px;*/
-/*  top: 250px;*/
-
-/*  font-family: 'Poppins';*/
-/*  font-style: normal;*/
-/*  font-weight: 500;*/
-/*  font-size: 16px;*/
-/*  line-height: 24px;*/
-/*  !* identical to box height *!*/
-
-/*  text-align: center;*/
-
-/*  color: #4285F4;*/
+ font-family: 'Poppins';
+ font-style: normal;
+ font-weight: 500;
+ font-size: 16px;
+ line-height: 24px;
 
 
-/*}*/
+ text-align: center;
+
+ color: #616161;
+}
+
+.reset{
+ position: absolute;
+ width: 218px;
+ height: 24px;
+ left: 300px;
+ top: 250px;
+
+ font-family: 'Poppins';
+ font-style: normal;
+ font-weight: 500;
+ font-size: 16px;
+ line-height: 24px;
+
+ text-align: center;
+
+color: #4285F4;
+}
+
+
 

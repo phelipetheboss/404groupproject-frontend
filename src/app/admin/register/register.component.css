@@ -1,0 +1,95 @@
+#create-account{
+position: absolute;
+width: 259px;
+height: 44px;
+left: 220px;
+top: 120px;
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 44px;
+/* identical to box height */
+letter-spacing: 0.05em;
+color: #EF7B4B;
+}
+
+/* -----------------------
+Form
+----------------------- */
+.form-control {
+border-radius: 0;
+}
+.form-control:focus {
+box-shadow: none;
+}
+.form-group {
+
+  left: 220px;
+  top: 500px;
+
+}
+.form-group > label {
+text-transform: uppercase;
+font-size: 10px;
+color: #ff8d00;
+transform-origin: 0 0;
+transform: scale(1.4);
+pointer-events: none;
+position: relative;
+right:30%;
+z-index: 5;
+}
+.form-group > input {
+width: 330%;
+}
+.form-group > label {
+transition: transform 0.4s;
+transform-origin: 0 0;
+transform: scale(1.4) translateY(20px);
+}
+.form-group.not-empty > label {
+transform: none;
+}
+/*------------------------------
+Form
+------------------------------*/
+.form-control {
+border: 0;
+border-bottom: 1px solid #a1a2a3;
+}
+.form-control,
+.form-control:focus,
+.form-control:focus:hover {
+color: black;
+background: none;
+outline: none;
+}
+.form-control:focus,
+.form-control:focus:hover {
+border-bottom: 1px solid #ff8d00;
+}
+.btn{
+
+  position: absolute;
+  width: 400px;
+  height: 60px;
+  left: 150px;
+  top: 251px;
+
+  background: #771711;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 22px;
+}
+
+.form-signin{
+  position: absolute;
+  width: 650.66px;
+  height: 0px;
+left: 220px;
+top: 200px;
+}
+
+
+
+

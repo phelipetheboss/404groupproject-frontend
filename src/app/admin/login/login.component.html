@@ -23,7 +23,7 @@
 
     <div class="row justify-content-md-center">
       <div class="col"></div>
-      <div class="col">
+      <div class="col-xs-offset-6">
         <p id="or">-OR-</p>
       </div>
       <div class="col"></div>
@@ -31,7 +31,7 @@
 
     <div class="row justify-content-md-center" id="login-form">
     <div class="col"></div>
-    <div class="col col-md-4 d-flex align-items-center">
+    <div class="col-xs-6 col-xs-offset-3">
       <form>
         <div class="form-group">
           <label for="username" class="sr-only">Username</label>
@@ -40,6 +40,8 @@
               <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control"
                 placeholder="Password" required>
           <button class="form-control btn-login" (click)="login()" type="submit">Sign in</button>
+          <h6 class="fp">Forgote your password?</h6><a href="" class="reset">Reset Password</a>
+
         </div>
       </form>
     </div>

@@ -1,9 +1,38 @@
-<h1>Surveys</h1>
-<p>Ramin -> you can work here for the SURVEYS content - Need to creat add CREATE Survey Button</p>
+<div class="container py-2">
+<div class="row">
 
-<div class="col-md-6 p-lg-5 mx-auto my-5">
+  <h2 class="col-md-4 my-2">Survey List</h2>
+  <div class="col"></div>
+
+
+
+
+  </div>
+  <div   class="col-md-4 ">
+
+    <form >
+     <button class="form-control btn-survey">Create New Survey</button>
+
+      <div class="form-group">
+        <span id="survey-list" class="border border-warning border-2 rounded-pill-0">
+          <input type="text" class="form-control form-rounded py-2" placeholder="Survey Name">
+
+          <input type="text" class="form-control form-rounded py-2" placeholder="Survey Name">
+         <input type="text" class="form-control form-rounded py-2" placeholder="Survey Name">
+          <input type="text" class="form-control form-rounded py-2" placeholder="Survey Name">
+          <input type="text" class="form-control form-rounded py-2" placeholder="Survey Name">
+
+
+        </span>
+
+      </div>
+    </form>
+</div>
+
+</div>
+<div class="col-md-4  mx-auto my-5">
   <br/><br/>
-  <h4 style="text-align: center;">Survey List</h4>
+
   <ul class="list-group">
     <tr *ngFor="let survey of surveyList">
       <td class="list-group-item">
