@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
+
 
 import { User } from '../../model/user.model';
 
@@ -16,8 +18,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-  private authUrl       = 'http://localhost:3000/api/auth';
-  private tempAuthUrl   = 'http://localhost:3000/api/auth';
+  private authUrl       = environment.backend + '/api/auth';
+  private tempAuthUrl   = environment.backend + '/api/auth';
   private loginPath     = 'login';
   private registerPath  = 'register';
   private logoutPath    = 'logout';

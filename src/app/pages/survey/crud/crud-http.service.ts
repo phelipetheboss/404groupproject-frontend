@@ -2,17 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CrudHttpService {
-  apiUrlGetSurveys: string = 'http://localhost:3000/api/get/surveys';
-  apiUrlGetAvailableSurveys: string = 'http://localhost:3000/api/get/available-surveys';
-  apiUrlGetSurveyById: string = 'http://localhost:3000/api/get/survey';
-  apiUrlGetResponse: string = 'http://localhost:3000/api/get/responses';
-  apiUrlPostSurvey: string = 'http://localhost:3000/api/post/surveys';
-  apiUrlPostResponses: string = 'http://localhost:3000/api/post/responses';
+  apiUrlGetSurveys: string = environment.backend + '/api/get/surveys';
+  apiUrlGetAvailableSurveys: string = environment.backend + '/api/get/available-surveys';
+  apiUrlGetSurveyById: string = environment.backend + '/api/get/survey';
+  apiUrlGetResponse: string = environment.backend + '/api/get/responses';
+  apiUrlPostSurvey: string = environment.backend + '/api/post/surveys';
+  apiUrlPostResponses: string = environment.backend + '/api/post/responses';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient, private router: Router) { }
