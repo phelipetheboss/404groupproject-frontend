@@ -10,6 +10,7 @@ import { SurveyResultsComponent } from './pages/survey/survey-results/survey-res
 import { LoginComponent } from './admin/login/login.component';
 import { AuthGuardService as AuthGuard } from './admin/auth/auth-guard.service';
 import { RegisterComponent } from "./admin/register/register.component";
+import { AvailableSurveysComponent } from './pages/survey/available-surveys/available-surveys.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent, data: {title: 'Home'}},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'update-survey/:id', component: UpdateSurveyComponent, canActivate: [AuthGuard], data: {title: 'Surveys'}},
   {path: 'respond-survey/:id', component: RespondSurveyComponent, data: {title: 'Respond Survey'}},
   {path: 'survey-results', component: SurveyResultsComponent, canActivate: [AuthGuard], data: {title: 'Survey Results'} },
+  {path: 'available-surveys', component: AvailableSurveysComponent, data: {title: 'Available Surveys'} }
 ];
 
 @NgModule({
