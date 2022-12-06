@@ -16,4 +16,7 @@
 
 
 </div>
-<app-list-survey></app-list-survey>
+<div *ngIf="authService.isAuthenticated();">
+     <app-list-survey></app-list-survey>
+</div>
+

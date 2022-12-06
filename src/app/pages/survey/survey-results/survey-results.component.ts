@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudHttpService } from '../crud/crud-http.service';
+import { AuthService } from "../../../admin/auth/auth.service";
 
 @Component({
   selector: 'app-survey-results',
@@ -10,7 +11,7 @@ export class SurveyResultsComponent implements OnInit {
   surveyList: any = [];
   responses: any = []
 
-  constructor(private crudHttpService: CrudHttpService) {
+  constructor(private crudHttpService: CrudHttpService, public authService: AuthService) {
     
   }
 
@@ -19,7 +20,9 @@ export class SurveyResultsComponent implements OnInit {
   }
 
   listSurveys(){
-    this.crudHttpService.listSurveys().subscribe((response)=>{
+    let owner = this.authService.authenticatedUser();
+
+    this.crudHttpService.listSurveys(owner).subscribe((response)=>{
       this.surveyList = response;
 
       for(let survey of this.surveyList){
