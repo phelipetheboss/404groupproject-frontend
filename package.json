@@ -5,10 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "heroku-postbuild":"ng build --prod",
     "json:server": "json-server --watch surveys.json",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "heroku-postbuild":"ng build"
   },
   "private": true,
   "dependencies": {
