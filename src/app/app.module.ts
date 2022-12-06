@@ -22,6 +22,7 @@ import { SurveyResultsComponent } from './pages/survey/survey-results/survey-res
 import { AuthComponent } from './admin/auth/auth.component';
 import { RegisterComponent } from './admin/register/register.component';
 import { LoginComponent } from './admin/login/login.component';
+import { AvailableSurveysComponent } from './pages/survey/available-surveys/available-surveys.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { LoginComponent } from './admin/login/login.component';
     RespondSurveyComponent,
     SurveyResultsComponent,
     AuthComponent,
-    RegisterComponent
+    RegisterComponent,
+    AvailableSurveysComponent
   ],
   imports: [
     BrowserModule,

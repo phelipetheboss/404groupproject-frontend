@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudHttpService } from '../crud/crud-http.service';
 import { AuthService } from "../../../admin/auth/auth.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-survey',
@@ -10,14 +11,16 @@ import { AuthService } from "../../../admin/auth/auth.service";
 export class ListSurveyComponent implements OnInit {
   surveyList:any = [];
 
-  constructor(public authService: AuthService, private crudHttpService: CrudHttpService) { }
+  constructor(public authService: AuthService, private crudHttpService: CrudHttpService, private router: Router) { }
 
   ngOnInit(): void {
     this.listSurveys();
   }
 
   listSurveys(){
-    this.crudHttpService.listSurveys().subscribe((response)=>{
+    let owner = this.authService.authenticatedUser();
+
+    this.crudHttpService.listSurveys(owner).subscribe((response)=>{
       this.surveyList = response;
     },(error=>{
 
@@ -26,19 +29,9 @@ export class ListSurveyComponent implements OnInit {
 
   deleteSurvey(id: any){
     this.crudHttpService.deleteSurvey(id).subscribe((result) => {
-      console.log(result);
+      
     });
-  }
-
-  isAvailable(survey: any): Boolean{
-    let result: Boolean;
-    let currentDate = new Date(Date.now()).toISOString().split('T')[0];
-
-    if(survey.startDate <= currentDate && survey.endDate >= currentDate)
-      result = true;
-    else
-      result = false;
-
-    return result;
+    window.alert("Survey Deleted!");
+    window.location.reload();
   }
 }

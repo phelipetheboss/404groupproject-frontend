@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BasePageComponent } from "../../partials/base-page/base-page.component";
 import { ActivatedRoute } from "@angular/router";
+import { AuthService } from "../../admin/auth/auth.service";
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class HomeComponent extends BasePageComponent implements OnInit {
 
-  constructor(route: ActivatedRoute) {
+  constructor(route: ActivatedRoute, public authService: AuthService) {
     super(route);
   }
 

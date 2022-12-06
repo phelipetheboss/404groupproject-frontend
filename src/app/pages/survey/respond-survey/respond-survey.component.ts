@@ -40,7 +40,22 @@ export class RespondSurveyComponent{
   }
 
   respondSurvey(data: any){
-    this.crudHttpService.createResponse(data).subscribe();
-    this.router.navigate(['/home']);
+    let errorMessage = "";
+    let errorCount = 0;
+
+    for(let i = 0; i < data.questions.length; i++){
+      if(data.questions[i].response === ""){
+        errorMessage += "You should respond question "+(i+1)+"!\n";
+        errorCount++;
+      }
+    }
+
+    if(errorCount > 0){
+      window.alert(errorMessage);
+    }
+    else{
+      this.crudHttpService.createResponse(data).subscribe();
+      this.router.navigate(['/home']);
+    }
   }
 }

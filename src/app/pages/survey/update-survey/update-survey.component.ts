@@ -18,6 +18,7 @@ export class UpdateSurveyComponent{
     lastModification: '',
     startDate: '',
     endDate: '',
+    owner: '',
     questions: this.fb.array([])
   });
 
@@ -30,6 +31,7 @@ export class UpdateSurveyComponent{
         lastModification: [this.mySurvey.lastModification],
         startDate: [this.mySurvey.startDate],
         endDate: [this.mySurvey.endDate],
+        owner: [this.mySurvey.owner],
         questions: this.fb.array(this.mySurvey.questions.map((r: any) => this.fb.group(r)))
       });
     },(error=>{
@@ -55,8 +57,54 @@ export class UpdateSurveyComponent{
   }
 
   updateSurvey(data: any){
-    this.crudHttpService.updateSurvey(this.id,data);
-    this.router.navigate(['/home']);
+    let errorMessage = "";
+    let errorCount = 0;
+
+    if(data.surveyName === ""){
+      errorMessage += "Survey Name is blank!\n";
+      errorCount++;
+    }
+    if(data.startDate === ""){
+      errorMessage += "Start Date is blank!\n";
+      errorCount++;
+    }
+    if(data.endDate === ""){
+      errorMessage += "End Date is blank!\n";
+      errorCount++;
+    }
+    if(data.questions.length === 0){
+      errorMessage += "You should insert at least a question!\n";
+      errorCount++;
+    }
+    for(let i = 0; i < data.questions.length; i++){
+      if(data.questions[i].description === ""){
+        errorMessage += "You should insert a description for question "+(i+1)+"!\n";
+        errorCount++;
+      }
+      if(data.questions[i].questionType === ""){
+        errorMessage += "You should insert a type for question "+(i+1)+"!\n";
+        errorCount++;
+      }
+      if(data.questions[i].questionType === "multipleChoice"
+         && (data.questions[i].optionA === ""
+             || data.questions[i].optionB === ""
+             || data.questions[i].optionC === ""
+             || data.questions[i].optionD === ""
+            )
+      ){
+        errorMessage += "You should insert a description for all options of question "+(i+1)+"!\n";
+        errorCount++;
+      }
+    }
+
+    if(errorCount > 0){
+      window.alert(errorMessage);
+    }
+    else{
+      this.crudHttpService.updateSurvey(this.id,data);
+      this.router.navigate(['/home']);
+    }
+    
   }
 
   removeQuestion(questionIndex: number){
