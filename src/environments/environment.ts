@@ -3,8 +3,8 @@
 // The list-survey of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  backend: "https://e404backend.herokuapp.com"
+  production: false,
+  backend: "'http://localhost:3000"
 };
 
 /*
