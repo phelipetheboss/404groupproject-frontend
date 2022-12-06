@@ -3,10 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "node server.js",
-    // "build": "ng build",
     "json:server": "json-server --watch surveys.json",
-    // "watch": "ng build --watch --configuration development",
-    // "test": "ng test",
     "heroku-postbuild": "ng build"
   },
   "private": true,
