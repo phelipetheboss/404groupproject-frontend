@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CrudHttpService {
-  apiUrlGetSurvey: string = 'http://localhost:3000/api/get/surveys';
+  apiUrlGetSurveys: string = 'http://localhost:3000/api/get/surveys';
+  apiUrlGetAvailableSurveys: string = 'http://localhost:3000/api/get/available-surveys';
+  apiUrlGetSurveyById: string = 'http://localhost:3000/api/get/survey';
   apiUrlGetResponse: string = 'http://localhost:3000/api/get/responses';
   apiUrlPostSurvey: string = 'http://localhost:3000/api/post/surveys';
   apiUrlPostResponses: string = 'http://localhost:3000/api/post/responses';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   createSurvey(survey: any): Observable<any> {
     let API_URL = `${this.apiUrlPostSurvey}`;
+    
+    this.router.navigate(['/home']);
     return this.http.post(API_URL, survey);
   }
 
@@ -34,12 +39,16 @@ export class CrudHttpService {
     return this.http.get<JSON>(API_URL);
   }
 
-  listSurveys() {
-    return this.http.get(`${this.apiUrlGetSurvey}`);
+  listSurveys(owner: String) {    
+    return this.http.get(`${this.apiUrlGetSurveys}/${owner}`);
+  }
+
+  listAvailableSurveys() {    
+    return this.http.get(`${this.apiUrlGetAvailableSurveys}`);
   }
   
   listSurveyById(id: any): Observable<JSON> {
-    let API_URL = `${this.apiUrlGetSurvey}/${id}`;
+    let API_URL = `${this.apiUrlGetSurveyById}/${id}`;
     return this.http.get<JSON>(API_URL);
   }
 
@@ -49,7 +58,7 @@ export class CrudHttpService {
   }
 
   deleteSurvey(id: any){
-    let API_URL = `${this.apiUrlGetSurvey}/${id}`;
+    let API_URL = `${this.apiUrlGetSurveys}/${id}`;
 
     return this.http.delete(API_URL);
   }

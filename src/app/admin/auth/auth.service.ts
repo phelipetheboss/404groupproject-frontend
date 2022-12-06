@@ -28,8 +28,25 @@ export class AuthService {
   public isAuthenticated(): Boolean {
     let userData = localStorage.getItem('userInfo');
     
-    if (userData && JSON.parse(userData)) return true
-    return false;
+    if (userData && JSON.parse(userData)){
+      return true;
+    }
+    else{
+      return false;
+    }
+    
+  }
+
+  public authenticatedUser(): String {
+    let userData = localStorage.getItem('userInfo');
+
+    if (userData && JSON.parse(userData)){
+      return JSON.parse(userData).username;
+    }
+    else{
+      return "";
+    }
+
   }
 
   public setUserInfo(user: any) {

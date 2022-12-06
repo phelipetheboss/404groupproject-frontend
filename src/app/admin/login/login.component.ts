@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.validate(this.username, this.password).subscribe((user) => {
-      console.log('ttt');
       this.authService.setUserInfo(user)
       this.router.navigate(['/home'])
     }, (error) => {

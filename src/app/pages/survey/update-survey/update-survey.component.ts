@@ -18,6 +18,7 @@ export class UpdateSurveyComponent{
     lastModification: '',
     startDate: '',
     endDate: '',
+    owner: '',
     questions: this.fb.array([])
   });
 
@@ -30,6 +31,7 @@ export class UpdateSurveyComponent{
         lastModification: [this.mySurvey.lastModification],
         startDate: [this.mySurvey.startDate],
         endDate: [this.mySurvey.endDate],
+        owner: [this.mySurvey.owner],
         questions: this.fb.array(this.mySurvey.questions.map((r: any) => this.fb.group(r)))
       });
     },(error=>{

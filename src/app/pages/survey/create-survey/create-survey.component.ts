@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CrudHttpService } from '../crud/crud-http.service';
 import {FormArray, FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { Router } from "@angular/router";
+import { AuthService } from 'src/app/admin/auth/auth.service';
 
 @Component({
   selector: 'app-create-survey',
@@ -16,10 +17,11 @@ export class CreateSurveyComponent{
     lastModification: this.currentDate,
     startDate: '',
     endDate: '',
+    owner: this.authService.authenticatedUser(),
     questions: this.fb.array([])
   });
 
-  constructor(private fb: FormBuilder, private crudHttpService: CrudHttpService, private router: Router) { }
+  constructor(private fb: FormBuilder, private crudHttpService: CrudHttpService, private router: Router, private authService: AuthService) { }
 
   get questions(){
     return this.survey.controls["questions"] as FormArray;
@@ -88,6 +90,7 @@ export class CreateSurveyComponent{
     }
     else{
       this.crudHttpService.createSurvey(survey).subscribe();
+      window.alert("Survey Created!");
       this.router.navigate(['/home']);
     }
   }

@@ -19,7 +19,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/survey-list">Surveys</a>
+          <a class="nav-link" href="/available-surveys">Available Surveys</a>
         </li>
 
         <div *ngIf="!authService.isAuthenticated(); else elseBlock">
@@ -29,6 +29,10 @@
         </div>
 
         <ng-template #elseBlock>
+          <li class="nav-item">
+            <a class="nav-link" href="/survey-list">My Surveys</a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/create-survey">Create Survey</a>
           </li>
