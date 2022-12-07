@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "json:server": "json-server --watch surveys.json",
     "watch": "ng build --watch --configuration development",
