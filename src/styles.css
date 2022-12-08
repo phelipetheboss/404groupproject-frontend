@@ -1,32 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   background-color: #F7EEEA;
-  font-family:sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #771711;
 }
-header{
-  font-family:sans-serif;
-  /* box-sizing: border-box;
-  position: relative;
 
-  /* width: 953px; */
-  /* height: 69px;
-
-  background: #FFFFFF;
-  border-bottom: 1px solid #F8E0FB; */
-}
 .btn{
   width: 169px;
   height: 68px;
-  font-family:sans-serif;
   color: #F7EEEA;
   background: #771711;
 }
-
-/*.navbar-nav a{*/
-/*  margin-left:20px;*/
-/*  margin-right:20px;*/
-/*}*/
-
 
 
