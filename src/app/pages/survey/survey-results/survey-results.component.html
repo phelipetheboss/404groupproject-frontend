@@ -1,8 +1,8 @@
 <h1>Survey Results</h1>
-<div class="card" style="width: 18rem;" *ngFor="let survey of surveyList">
+<div class="card" id="{{survey._id}}" style="width: 18rem;" *ngFor="let survey of surveyList">
     <div *ngIf="survey.totalResponses > 0">
-        <div class="card-header">
-        {{survey.surveyName}} - Total Responses: {{survey.totalResponses}}
+        <div class="card-header" #currentDiv>
+        {{survey.surveyName}} - Total Responses: {{survey.totalResponses}}<button (click)="exportAsPDF(currentDiv);">Export as PDF</button>
         </div>
         <ul class="list-group list-group-flush" *ngFor="let question of survey.questions">
             <li class="list-group-item">{{question.description}}</li>
