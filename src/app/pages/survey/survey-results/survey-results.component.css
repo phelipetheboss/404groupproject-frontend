@@ -1,0 +1,10 @@
+button{
+    font-family:sans-serif;
+    color: #F7EEEA;
+    border-radius: 5px;
+    background: rgb(42, 42, 44);
+}
+button a{
+    text-decoration: none;
+    color: #F7EEEA;
+}
