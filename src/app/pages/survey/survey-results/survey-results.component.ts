@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudHttpService } from '../crud/crud-http.service';
 import { AuthService } from "../../../admin/auth/auth.service";
+import jsPDF from 'jspdf';
+import Html2Canvas from 'html2canvas';
 
 @Component({
   selector: 'app-survey-results',
@@ -18,6 +20,17 @@ export class SurveyResultsComponent implements OnInit {
   ngOnInit(): void {
     this.listSurveys();
   }
+
+  exportAsPDF(divId: any)
+    {
+        let data = document.getElementById(divId.parentNode.parentNode.id)!;  
+        Html2Canvas(data).then(canvas => {
+        const contentDataURL = canvas.toDataURL('image/png');
+        let pdf = new jsPDF('p', 'cm', 'a4');
+        pdf.addImage(contentDataURL, 'PNG', 0, 0, 10, 15);  
+        pdf.save('Survey_Result.pdf');   
+      }); 
+    }
 
   listSurveys(){
     let owner = this.authService.authenticatedUser();
