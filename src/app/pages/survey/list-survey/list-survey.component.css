@@ -1,19 +1,29 @@
-button{
-    font-family:sans-serif;
-    color: #F7EEEA;
-    float:inline-end;
-    border-radius: 5px;
+table {
+  background-color: whitesmoke;
 }
+
+button {
+  float: right;
+  border-radius: 5px;
+  width: 43px;
+  background-color: transparent;
+  border: none;
+}
+
 button a{
-    text-decoration: none;
-    color: #F7EEEA;
+  text-decoration: none;
 }
+
 .delete {
-    background: red;
+  color: red;
 }
+
 .edit{
-    background: blue;
+  color: blue;
 }
-.respond{
-    background: rgb(42, 42, 44);
+
+td {
+  padding: 5px;
 }
+
+

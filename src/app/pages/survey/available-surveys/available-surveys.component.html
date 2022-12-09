@@ -7,7 +7,11 @@
         {{ survey.surveyName }}
       </td>
       <td class="col-1">
-        <button type="button" class="respond"><a href="#" [routerLink]="['/respond-survey/', survey._id]">Respond</a></button>
+        <button type="button">
+          <a href="#" [routerLink]="['/respond-survey/', survey._id]">
+            <i class="fa-solid fa-reply respond"></i>
+          </a>
+        </button>
       </td>
     </tr>
   </table>
