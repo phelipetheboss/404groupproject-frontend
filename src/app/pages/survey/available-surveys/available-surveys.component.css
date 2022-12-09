@@ -1,13 +1,23 @@
-button{
-    font-family:sans-serif;
-    color: #F7EEEA;
-    float:inline-end;
-    border-radius: 5px;
+button {
+  border-radius: 5px;
+  width: 43px;
+  float: right;
+  background-color: transparent;
+  border: none;
 }
+
 button a{
-    text-decoration: none;
-    color: #F7EEEA;
+  text-decoration: none;
 }
+
 .respond{
-    background: rgb(42, 42, 44);
+  color: #771711;
+}
+
+table {
+  background-color: whitesmoke;
+}
+
+td {
+  padding: 5px;
 }
