@@ -7,3 +7,11 @@ ul {
 .testClass {
   margin-bottom: 170px;
 }
+
+.btn{
+  width: 169px;
+  height: 68px;
+  color: #F7EEEA;
+  background: #771711;
+}
+
