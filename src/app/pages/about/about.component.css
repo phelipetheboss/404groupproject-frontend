@@ -27,4 +27,11 @@ i {
   padding-right: 20px;
 }
 
+.card {
+  display: inline-flex;
+}
 
+.groupCard {
+  width: 15rem;
+  margin: 5px;
+}
