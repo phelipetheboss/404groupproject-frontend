@@ -15,11 +15,11 @@ button a{
 }
 
 .delete {
-  color: red;
+  color: #DC143C;
 }
 
 .edit{
-  color: blue;
+  color: darkblue;
 }
 
 td {
