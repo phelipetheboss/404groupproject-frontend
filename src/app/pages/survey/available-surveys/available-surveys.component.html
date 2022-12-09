@@ -1,12 +1,12 @@
-<div class="col-md-6 p-lg-5 mx-auto my-5">
+<div class="col-md-9 p-lg-5 mx-auto my-5">
   <h4 style="text-align: center;">Community Surveys</h4>
   <br/>
   <table class="table">
     <tr *ngFor="let survey of surveyList">
-      <td class="col-9">
+      <td class="col-11">
         {{ survey.surveyName }}
       </td>
-      <td class="col-3">
+      <td class="col-1">
         <button type="button" class="respond"><a href="#" [routerLink]="['/respond-survey/', survey._id]">Respond</a></button>
       </td>
     </tr>
