@@ -1,166 +1,37 @@
-p{
-
-position: absolute;
-width: 536px;
-height: 53px;
-left: 182px;
-top: 100px;
-
-font-family: 'Inter';
+#p {
 font-style: normal;
 font-weight: 400;
 font-size: 24px;
-line-height: 29px;
-
-color: #771711;
 }
-#p1{
-    position: absolute;
-width: 492px;
-height: 101px;
-left: 200px;
-top: 153px;
 
-font-family: 'Inter';
+#p1{
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
-line-height: 19px;
-
-color: #771711;
 }
 
 #p2{
-    position: absolute;
-width: 536px;
-height: 53px;
-left: 182px;
-top: 285px;
-
-font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
 font-size: 24px;
 line-height: 29px;
-text-align: center;
-
-color: #771711;
 }
 
-.dot{
-    height: 70px;
-    width: 75px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-}
-#c1{
-    position: absolute;
-    width: 114px;
-    height: 116px;
-    left: 147px;
-    top: 378px;
-    background: #FFF9F9;
-}
-#bruna{
-    position: absolute;
-width: 114px;
-height: 37px;
-left: 147px;
-top: 509px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 18px;
-text-align: center;
-
-color: #771711;
-}
-#c2{
-
-    position: absolute;
-    width: 114px;
-    height: 116px;
-    left: 318px;
-    top: 378px;
-    background: #FFF9F9;
-}
-#Eduardo{
-
-position: absolute;
-width: 130px;
-height: 37px;
-left: 320px;
-top: 514px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 18px;
-text-align: center;
-
-color: #771711;
-}
-#c3{
-    position: absolute;
-    width: 114px;
-    height: 116px;
-    left: 480px;
-    top: 378px;
-    background: #FFF9F9;
-    
-}
-#Phelipe{
-    position: absolute;
-width: 130px;
-height: 37px;
-left: 480px;
-top: 509px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 18px;
-text-align: center;
-
-color: #771711;
-}
-#c4{
-    position: absolute;
-    width: 114px;
-    height: 116px;
-    left: 656px;
-    top: 378px; 
-    background: #FFF9F9;
-}
-#ramin{
-    position: absolute;
-width: 167px;
-height: 37px;
-left: 633px;
-top: 509px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 18px;
-text-align: center;
-
-color: #771711;
+img {
+  width: 238px;
+  height: 238px;
 }
 
-#git{
-    position: absolute;
-left: 27.89%;
-right: 22.11%;
-top: 26.88%;
-bottom: 24.47%;
+i {
+  color: #771711;
+  padding-right: 20px;
+}
 
-background: #F5E7E0;
-transform: rotate(0.53deg);
+.card {
+  display: inline-flex;
+}
+
+.groupCard {
+  width: 15rem;
+  margin: 5px;
 }

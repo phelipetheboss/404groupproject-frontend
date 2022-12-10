@@ -33,12 +33,26 @@ export class RegisterComponent implements OnInit {
       email: this.email,
       displayName: this.displayName
     }
-    
-    this.authService.registerUser(this.user).subscribe(() => {
-      console.log(`user registration success: ${ this.user }`);
-      this.router.navigate(['login']);
-    }, (error) => {
-      console.log(`Error: ${ error }`);
-    })
+
+    if (
+      this.user.username === "" ||
+      this.user.password === "" ||
+      this.user.displayName === "" ||
+      this.user.email === ""
+    ) {
+      alert("All Fields Are required")
+      this.router.navigate(['/register'])
+    } else {
+      this.authService.registerUser(this.user).subscribe(() => {
+        console.log(`user registration success: ${ this.user }`);
+        this.router.navigate(['login']);
+      }, (error) => {
+        console.log(`Error: ${ error }`);
+      })
+    }
+  }
+
+  back() {
+    this.router.navigate([''])
   }
 }
